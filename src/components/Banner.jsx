@@ -27,8 +27,6 @@ const Banner = () => {
             <TypeAnimation sequence={[
               'FullStack Developer',
               2000,
-              'Web Designer',
-              2000,
             ]}
             speed={50}
             className="text-accent"
@@ -40,7 +38,7 @@ const Banner = () => {
           variants={fadeIn('up', 0.5)} 
           initial="hidden" 
           whileInView={'show'}
-           viewport={{once: false, amount: 0.7}} className='mb-8 max-w-lg mx-auto lg:mx-0'>Rodrigo, 19 anos, Florianópolis-SC</motion.p>
+           viewport={{once: false, amount: 0.7}} className='mb-8 max-w-lg mx-auto lg:mx-0'>Rodrigo, 21 anos, Florianópolis-SC</motion.p>
           <motion.div
           variants={fadeIn('up', 0.6)} 
           initial="hidden" 

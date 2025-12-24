@@ -28,16 +28,16 @@ const About = () => {
         whileInView={"show"}
         viewport={{once: false, amount: 0.3}} className='flex-1'>
           <h2 className='h2 text-accent'>Sobre Mim</h2>
-          <h3 className='h3 mb-4'>Eu sou um Desenvolvedor FullStack e WebDesigner</h3>
-          <p className='mb-6'>Me chamo Rodrigo Carvalho, cursando <strong>Analise e Desenvolvimento de Sistemas</strong> (Faculdade Descomplica),
-          já atuei em áreas como Designer Gráfico, Editor de Video e Filmmaking, porém me encontrei na programação.<br/><br/>
-          Tecnologias que trabalho: <b>ReactJs, JavaScript, Liquid, Php, Wordpress.</b><br/><br/>
-          Após uma longa jornada querendo descobrir o que seria como profissional, me encontrei na programação, estou estudando desde 2019 onde tudo começou,
-          em 2023 chegou minha maioridade (18 anos), e surgiu minha <b>primeira vaga na area de tecnologia</b>, na VistaSoftware, onde trabalhava como <b>Suporte Tecnico.</b><br/>
-          Lá foi onde eu aprendi muito, em questão de <b>trabalhar em equipe, atender clientes, wordpress, Php, e algo de MySQL.</b>
-          Trabalhei lá durante 8 meses, onde resolvi sair, pois apareceu uma oportunidade como <b>desenvolvedor</b>, que era o meu sonho, me tornar um desenvolvedor, e não um atendente de tickets
-          e foi onde me surgiu a vaga na Higiepro, onde atuo com <b>Lojas Virtuais</b>, na SHOPIFY, onde tive um desafio grande, para aprender a linguagem utilizada, que é a LIQUID.<br/>
-          Após 7 dias estudando já estava entendendo e desenvolvendo em LIQUID, e hoje já foram feitas algumas lojas, e landing pages para esta empresa. 
+          <h3 className='h3 mb-4'>Eu sou um Desenvolvedor FullStack</h3>
+          <p className='mb-6'>Sou Desenvolvedor Full Stack, formado em Análise e Desenvolvimento de Sistemas, com experiência no desenvolvimento de plataformas web, e-commerces e sistemas SaaS.
+
+Minha trajetória profissional começou no universo criativo, atuando como Designer Gráfico, Editor de Vídeo e Filmmaker, o que me proporcionou uma base sólida em design, usabilidade e experiência do usuário. Com o tempo, encontrei na programação o equilíbrio entre criatividade e lógica, área na qual atuo profissionalmente desde 2023.
+
+Atuei como primeiro desenvolvedor full-time de uma startup de saúde, sendo responsável por construir a plataforma do zero, participando de decisões de arquitetura, integrações com APIs e desenvolvimento de funcionalidades com Inteligência Artificial voltadas ao apoio médico.
+
+Também possuo experiência com e-commerces e sistemas internos, especialmente no ecossistema Shopify, trabalhando com Liquid, GraphQL e APIs, além de manutenção e desenvolvimento de aplicações com React, Ruby on Rails, Node.js e PHP.
+
+Tenho maior afinidade com Front-End, criando interfaces intuitivas e performáticas, mas atuo de forma completa no Back-End, sempre focado em soluções escaláveis, bem estruturadas e orientadas ao negócio.
           </p>
           {/* Status */}
           <div className='flex gap-x-6 lg:gap-x-10 mb-12'>
@@ -45,7 +45,7 @@ const About = () => {
               <div className='text-[40px] font-tertiary text-gradient mb-2'>
                 {
                   inView ?
-                  <CountUp start={0} end={20} duration={5} /> : 20 } <p className='text-xs mt-2'>Meses</p>
+                  <CountUp start={0} end={48} duration={5} /> : 20 } <p className='text-xs mt-2'>Meses</p>
               </div>
               <div className='font-primary text-sm tracking-[2px]'>Experiência de <br />Trabalho</div>
             </div>

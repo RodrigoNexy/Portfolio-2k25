@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Work from './components/Work';
 import Work2 from './components/Work2';
 import Contact from './components/Contact';
+import WorksText from './components/WorksText';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Banner />
       <Nav />
       <About />
+      <WorksText />
       <Work />
       <Work2 />
       <Services />
