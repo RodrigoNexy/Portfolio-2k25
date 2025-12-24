@@ -1,67 +1,10 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
+import { useTranslation } from '../hooks/useTranslation';
 
 const WorksText = () => {
-  const experiences = [
-    {
-      id: 1,
-      company: 'HealthTracker',
-      period: '02/2025 a 12/2025',
-      role: 'Desenvolvedor Fullstack (PJ)',
-      description: [
-        'Desenvolvimento de Plataforma de Saúde (Startup HealthTracker)',
-        'Atuei como primeiro desenvolvedor full-time, responsável por construir a plataforma do zero.',
-        'Desenvolvimento de soluções com Inteligência Artificial para apoiar médicos na análise de exames.',
-        'Arquitetura e implementação de funcionalidades utilizando Ruby on Rails, React, JavaScript e REST APIs.',
-        'Criação de um sistema robusto, escalável e intuitivo, garantindo usabilidade para diferentes perfis de usuários:',
-        '• Médico: acesso completo à gestão de pacientes e exames e chat com IA.',
-        '• Paciente: envio e acompanhamento de exames pela plataforma.',
-        '• Médico convidado (guest): acesso restrito para visualização de pacientes compartilhados.',
-        '• Colaborador (secretária): painel administrativo com permissões controladas.',
-        'Landing Page HealthTracker - Desenvolvimento e publicação da landing page institucional da HealthTracker. Utilização de WordPress para construção rápida, responsiva e otimizada para conversão.'
-      ],
-      technologies: 'Ruby on Rails, React, JavaScript, REST APIs, WordPress'
-    },
-    {
-      id: 2,
-      company: 'HigiePro',
-      period: '04/2024 a 12/2024',
-      role: 'Desenvolvedor Fullstack',
-      description: [
-        'Empresa HIGIEPRO COMÉRCIO DE PRODUTOS DE HIGIENE PROFISSIONAL.',
-        'Projeto Seller Portal: Construção de um Seller Portal no Retool, usando GraphQL para transformar dados da Shopify em gráficos e relatórios interativos, também criado funcionalidade para controle de estoque dos Sellers, para que as entregas fossem mais rápidas diminuindo de até 30 dias para entrega, para até 14 dias.',
-        'Projeto E-commerce - Site: Criada loja da Prosupply, uma vertente da Higiepro, para venda de produtos, desenvolvimento de features faltantes na shopify.',
-        'Projeto Loja.Higiepro e Higiepro - Manutenção de site: Manutenção de ambos sites que foram feitos com Php e Laravel.'
-      ],
-      technologies: 'GraphQL, Liquid (Shopify), TypeScript, JavaScript, Shopify REST API, Shopify GraphQL API, ReactJs, Node.js, PHP, Laravel, HTML, CSS'
-    },
-    {
-      id: 3,
-      company: 'Vista Software',
-      period: '07/2023 a 04/2024',
-      role: 'Analista de Suporte',
-      description: [
-        'Empresa de tecnologia da informação focada no desenvolvimento de software, sites, que opera em diversos negócios imobiliários.',
-        'Customização avançada de temas e layouts em sites imobiliários.',
-        'Solução de problemas de integração de APIs e sincronização com sistemas externos.',
-        'Criação e configuração de e-mails institucionais.',
-        'Implantação e gerenciamento de sites, desde o ambiente de hospedagem até a entrega final.'
-      ],
-      technologies: 'WordPress, PHP, MySQL, JavaScript, REST API, HTML, CSS'
-    },
-    {
-      id: 4,
-      company: 'Floripa Moto Week',
-      period: '09/2022 a 12/2024',
-      role: 'Desenvolvedor Full Stack - Freelancer oficial do evento',
-      description: [
-        'Floripa Moto Week é um dos maiores eventos de moto do estado de SC.',
-        'Projeto site v1 (2023): Criado site para o Floripa Moto Week, com intuito de acrescentar leads, e gerar mais faturamento.',
-        'Projeto site v2 (2024): Foi criado um site com integração de pagamentos próprios, com intuito de acrescentar leads, e gerar mais ingressos vendidos.'
-      ],
-      technologies: 'WordPress, Elementor, PHP, MySQL, Next.js, ReactJs, Node, PostgreSQL, Prisma (ORM), TypeScript, TailWindCSS, Shadcn'
-    }
-  ];
+  const { t } = useTranslation();
+  const experiences = t('worksText.experiences');
 
   return (
     <section id='experience' className='py-8 lg:py-24'>
@@ -73,7 +16,7 @@ const WorksText = () => {
           viewport={{ once: false, amount: 0.7 }}
           className='mb-12 lg:mb-16'
         >
-          <h2 className='h2 text-accent text-center mb-4'>Minhas Experiências</h2>
+          <h2 className='h2 text-accent text-center mb-4'>{t('worksText.title')}</h2>
         </motion.div>
 
         <div className='relative max-w-4xl mx-auto'>
@@ -82,9 +25,11 @@ const WorksText = () => {
 
           {/* Timeline items */}
           <div className='space-y-12 lg:space-y-16'>
-            {experiences.map((exp, index) => (
+            {experiences.map((exp, index) => {
+              const expId = exp.id || (index + 1);
+              return (
               <motion.div
-                key={exp.id}
+                key={expId}
                 variants={fadeIn('right', 0.3 + index * 0.1)}
                 initial='hidden'
                 whileInView={'show'}
@@ -95,7 +40,7 @@ const WorksText = () => {
                 <div className='relative z-10 flex-shrink-0'>
                   <div className='w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-[#ff56f6] to-[#3bace2] flex items-center justify-center shadow-lg shadow-[#ff56f6]/30'>
                     <span className='text-white font-primary font-bold text-lg lg:text-xl'>
-                      {String(exp.id).padStart(2, '0')}
+                      {String(expId).padStart(2, '0')}
                     </span>
                   </div>
                   {/* Linha conectando ao ponto (apenas no mobile) */}
@@ -129,7 +74,7 @@ const WorksText = () => {
                     {/* Tecnologias */}
                     <div className='mt-6 pt-4 border-t border-white/10'>
                       <p className='text-white/60 text-xs lg:text-sm mb-2 font-semibold uppercase tracking-wider'>
-                        Tecnologias:
+                        {t('worksText.technologies')}
                       </p>
                       <p className='text-gradient text-sm lg:text-base font-medium'>
                         {exp.technologies}
@@ -138,7 +83,8 @@ const WorksText = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

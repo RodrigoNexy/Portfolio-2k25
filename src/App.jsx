@@ -7,20 +7,23 @@ import Work from './components/Work';
 import Work2 from './components/Work2';
 import Contact from './components/Contact';
 import WorksText from './components/WorksText';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 const App = () => {
   return (
-    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
-      <Header />
-      <Banner />
-      <Nav />
-      <About />
-      <WorksText />
-      <Work />
-      <Work2 />
-      <Services />
-      <Contact />
-    </div>
+    <LanguageProvider>
+      <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
+        <Header />
+        <Banner />
+        <Nav />
+        <About />
+        <WorksText />
+        <Work />
+        <Work2 />
+        <Services />
+        <Contact />
+      </div>
+    </LanguageProvider>
   );
 };
 

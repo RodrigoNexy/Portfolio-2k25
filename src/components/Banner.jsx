@@ -7,7 +7,22 @@ import {TypeAnimation} from 'react-type-animation'
 import {motion} from 'framer-motion'
 import {fadeIn} from '../variants'
 import {Link} from 'react-scroll'
+import {useTranslation} from '../hooks/useTranslation'
+import {useLanguage} from '../contexts/LanguageContext'
+
 const Banner = () => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
+
+  const typewriterSequence = language === 'pt' 
+    ? [
+        t('banner.typewriter.fullstack'),
+        2000,
+      ]
+    : [
+        t('banner.typewriter.fullstack'),
+        2000,
+      ];
   return <section id='home' className='min-h-[85vh] lg:min-h-[78vh] flex items-center'>
     <div className='container mx-auto'>
       <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center'> 
@@ -23,22 +38,21 @@ const Banner = () => {
           whileInView={'show'}
            viewport={{once: false, amount: 0.7}}
             className='mb-6 text-[36px] lg:text-[50px] font-secondary font-semibold uppercase leading[1]'>
-            <span className='text-white mr-4'>Eu sou</span>
-            <TypeAnimation sequence={[
-              'FullStack Developer',
-              2000,
-            ]}
-            speed={50}
-            className="text-accent"
-            wrapper='span'
-            repeat={Infinity}
-             />
+            <span className='text-white mr-4'>{t('banner.iAm')}</span>
+            <TypeAnimation 
+              sequence={typewriterSequence}
+              speed={50}
+              deletionSpeed={75}
+              className="text-accent"
+              wrapper='span'
+              repeat={Infinity}
+            />
           </motion.div>
           <motion.p
           variants={fadeIn('up', 0.5)} 
           initial="hidden" 
           whileInView={'show'}
-           viewport={{once: false, amount: 0.7}} className='mb-8 max-w-lg mx-auto lg:mx-0'>Rodrigo, 21 anos, Florianópolis-SC</motion.p>
+           viewport={{once: false, amount: 0.7}} className='mb-8 max-w-lg mx-auto lg:mx-0'>{t('banner.location')}</motion.p>
           <motion.div
           variants={fadeIn('up', 0.6)} 
           initial="hidden" 
@@ -49,14 +63,14 @@ const Banner = () => {
       smooth={true}
       spy={true}
       offset={-200}>
-        <button className='btn btn-lg'>Entre em Contato</button>
+        <button className='btn btn-lg'>{t('banner.contactButton')}</button>
       </Link>
             <Link to='work'
       activeClass='active'
       smooth={true}
       spy={true}
       offset={-200}>
-        <button className='text-gradient btn-link'>Meu Portfólio</button>
+        <button className='text-gradient btn-link'>{t('banner.portfolioButton')}</button>
       </Link>
           </motion.div>
           {/* Redes sociais */}
